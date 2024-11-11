@@ -13,9 +13,34 @@
 
     <script>
 
-      // Show Hello on the click of the Buttom
-  
+      // Show Hello on the click of the Button
+      // QuerySelector
 
+       let btn = document.querySelector('#btn-1')
+      
+
+       // Event Listeners
+       btn.addEventListener('click' , function(){
+          // console.log("hello")
+
+          const helloDiv = document.createElement('div')
+          
+
+          helloDiv.innerText = 'Hello'
+
+          console.log(helloDiv)
+
+          const bodyElem = document.querySelector('body')
+
+          bodyElem.appendChild(helloDiv)
+
+       })
+
+
+     
+      
+
+      
     
        
     </script>

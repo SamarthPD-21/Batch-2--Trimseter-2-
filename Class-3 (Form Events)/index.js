@@ -6,3 +6,6 @@ form.addEventListener('submit' ,function(e){
      console.log(form.username.value)
      console.log(form.feedback.value)
 } )
+
+
+const regex = //

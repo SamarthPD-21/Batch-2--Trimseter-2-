@@ -1,48 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF - 8" />
-    <meta
-      name="viewport"
-      content="width = device - width, initial - scale = 1.0"
-    />
+<html>
+<!-- Please NOTE that the link to assets (like images) need to be set in global context.
+For example:
+To access an image from assets folder correct way to set src attribute is 
+
+src = 'profile.png'
+
+instead of 
+
+src = './assets/profile.png'
+-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  </head>
-  <body>
-    <button id="btn-1">Say Hello</button>
+</head>
+
+<body>
+    <div id="doubleHolder">
+        <button class="double">double</button>
+    </div>
 
     <script>
+        // Write your JS program here =========
+        let A = document.querySelector("#doubleHolder")
 
-      // Show Hello on the click of the Button
-      // QuerySelector
-
-       let btn = document.querySelector('#btn-1')
-      
-
-       // Event Listeners
-       btn.addEventListener('click' , function(){
-          // console.log("hello")
-
-          const helloDiv = document.createElement('div')
-          
-
-          helloDiv.innerText = 'Hello'
-
-          console.log(helloDiv)
-
-          const bodyElem = document.querySelector('body')
-
-          bodyElem.appendChild(helloDiv)
-
-       })
-
-
-     
-      
-
-      
-    
-       
+        A.addEventListener("click",function(e){
+          let B = document.createElement("button")
+          let C = document.createElement("button")
+          B.innerHTML = e.target.innerHTML
+          C.innerHTML = e.target.innerHTML
+          A.appendChild(B)
+          A.appendChild(C)
+          e.target.remove()
+          console.log(A,C)
+        })
     </script>
-  </body>
+</body>
+
 </html>

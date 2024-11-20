@@ -112,36 +112,29 @@
     <script>
       // Q Make the filter work
 
-       const dropdown = document.querySelector('select')
+       let A = document.querySelector("select")
+       A.addEventListener('change',function(){
+        let FV =A.value
+        let B = document.querySelectorAll('.price')
+        if(FV=="none"){
+          for(let i=0;i<B.length;i++){
+            B[i].parentElement.style.display = "block"
+        }
+        }
+        else{
+          for(let i=0;i<B.length;i++){
+          if(B[i].getAttribute('data-category')!=FV){
+            B[i].parentElement.style.display = "none"
+          }
+          else{
+            B[i].parentElement.style.display = "block"
+          }
+        }
+        }
         
-
-       dropdown.addEventListener('change' , function(){
-           const filterVal = dropdown.value
-           console.log(filterVal)
-
-           const allPrices = document.querySelectorAll('.price')
-           console.log(allPrices)
-
-           if(filterVal=='none'){
-            for(let i=0 ; i<allPrices.length ; i++){
-              allPrices[i].parentElement.style.display='block'
-            }
-           }
-           else{
-             
-              for(let i=0 ; i<allPrices.length ; i++){
-                if(allPrices[i].getAttribute('data-category')!=filterVal){
-                  allPrices[i].parentElement.style.display ='none'
-                }
-                else{
-                  allPrices[i].parentElement.style.display ='block'
-                }
-              }
-
-           }
-
-
        })
+       
+       
 
 
 
